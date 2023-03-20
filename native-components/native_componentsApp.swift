@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct native_componentsApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

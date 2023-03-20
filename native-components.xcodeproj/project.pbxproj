@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		577B972A29B7C66300F1D292 /* ContentViewLegacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B972929B7C66300F1D292 /* ContentViewLegacy.swift */; };
+		577B972C29B7C68F00F1D292 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B972B29B7C68F00F1D292 /* Page.swift */; };
+		577B972E29B7C6C900F1D292 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B972D29B7C6C900F1D292 /* PageModel.swift */; };
+		577B973029B7C80D00F1D292 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B972F29B7C80D00F1D292 /* ButtonsView.swift */; };
+		577B973229B7D3D700F1D292 /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B973129B7D3D700F1D292 /* HelpButton.swift */; };
+		577B976F29C4F81A00F1D292 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B976E29C4F81A00F1D292 /* ColorsView.swift */; };
 		578C66F129A9668E00F5C499 /* native_componentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C66F029A9668E00F5C499 /* native_componentsApp.swift */; };
 		578C66F329A9668E00F5C499 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C66F229A9668E00F5C499 /* ContentView.swift */; };
 		578C66F529A9668F00F5C499 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578C66F429A9668F00F5C499 /* Assets.xcassets */; };
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		577B972929B7C66300F1D292 /* ContentViewLegacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewLegacy.swift; sourceTree = "<group>"; };
+		577B972B29B7C68F00F1D292 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		577B972D29B7C6C900F1D292 /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
+		577B972F29B7C80D00F1D292 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		577B973129B7D3D700F1D292 /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
+		577B976E29C4F81A00F1D292 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		578C66ED29A9668E00F5C499 /* native-components.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "native-components.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		578C66F029A9668E00F5C499 /* native_componentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_componentsApp.swift; sourceTree = "<group>"; };
 		578C66F229A9668E00F5C499 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +112,12 @@
 				578C66F429A9668F00F5C499 /* Assets.xcassets */,
 				578C66F929A9668F00F5C499 /* native_components.entitlements */,
 				578C66F629A9668F00F5C499 /* Preview Content */,
+				577B972929B7C66300F1D292 /* ContentViewLegacy.swift */,
+				577B972B29B7C68F00F1D292 /* Page.swift */,
+				577B972D29B7C6C900F1D292 /* PageModel.swift */,
+				577B972F29B7C80D00F1D292 /* ButtonsView.swift */,
+				577B973129B7D3D700F1D292 /* HelpButton.swift */,
+				577B976E29C4F81A00F1D292 /* ColorsView.swift */,
 			);
 			path = "native-components";
 			sourceTree = "<group>";
@@ -259,7 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577B976F29C4F81A00F1D292 /* ColorsView.swift in Sources */,
+				577B973029B7C80D00F1D292 /* ButtonsView.swift in Sources */,
+				577B973229B7D3D700F1D292 /* HelpButton.swift in Sources */,
+				577B972A29B7C66300F1D292 /* ContentViewLegacy.swift in Sources */,
+				577B972E29B7C6C900F1D292 /* PageModel.swift in Sources */,
 				578C66F329A9668E00F5C499 /* ContentView.swift in Sources */,
+				577B972C29B7C68F00F1D292 /* Page.swift in Sources */,
 				578C66F129A9668E00F5C499 /* native_componentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

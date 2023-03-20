@@ -32,7 +32,7 @@ struct ButtonsView: View {
           }
           Text("Secondary Buttons").font(.title)
           HStack {
-            Button("Mini", action: {}).controlSize(.mini).buttonStyle(.link)
+            Button("Mini", action: {}).controlSize(.mini)
             Button("Small", action: {}).controlSize(.small)
             Button("Regular", action: {}).controlSize(.regular)
             Button("Large", action: {}).controlSize(.large)

@@ -20,6 +20,7 @@
 		578C670329A9668F00F5C499 /* native_componentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670229A9668F00F5C499 /* native_componentsTests.swift */; };
 		578C670D29A9668F00F5C499 /* native_componentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670C29A9668F00F5C499 /* native_componentsUITests.swift */; };
 		578C670F29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670E29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift */; };
+		57EDDEED2A5485990027B9A6 /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		578C670829A9668F00F5C499 /* native-componentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-componentsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		578C670C29A9668F00F5C499 /* native_componentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_componentsUITests.swift; sourceTree = "<group>"; };
 		578C670E29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_componentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				577B972F29B7C80D00F1D292 /* ButtonsView.swift */,
 				577B973129B7D3D700F1D292 /* HelpButton.swift */,
 				577B976E29C4F81A00F1D292 /* ColorsView.swift */,
+				57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */,
 			);
 			path = "native-components";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				577B976F29C4F81A00F1D292 /* ColorsView.swift in Sources */,
 				577B973029B7C80D00F1D292 /* ButtonsView.swift in Sources */,
 				577B973229B7D3D700F1D292 /* HelpButton.swift in Sources */,
+				57EDDEED2A5485990027B9A6 /* SelectorsView.swift in Sources */,
 				577B972A29B7C66300F1D292 /* ContentViewLegacy.swift in Sources */,
 				577B972E29B7C6C900F1D292 /* PageModel.swift in Sources */,
 				578C66F329A9668E00F5C499 /* ContentView.swift in Sources */,

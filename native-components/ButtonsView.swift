@@ -10,40 +10,69 @@ import SwiftUI
 struct ButtonsView: View {
   @State private var toggle = false
   @State private var favoriteColor = 0
+  @AppStorage("radioSelection") private var radioSelection = 0
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: HorizontalAlignment.leading) {
         Group {
-          Text("Primary Buttons").font(.title)
-          HStack {
-            Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderedProminent)
-            Button("Small", action: {}).controlSize(.small).buttonStyle(.borderedProminent)
-            Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderedProminent)
-            Button("Large", action: {}).controlSize(.large).buttonStyle(.borderedProminent)
-//            ZStack {
-//              Rectangle().fill(.white).frame(width: 100, height: 100)
-//              Button("", action: {}).controlSize(.large).buttonStyle(.borderedProminent).colorScheme(.light)
-//            }
-//            ZStack {
-//              Rectangle().fill(.black).frame(width: 100, height: 100)
-//              Button("", action: {}).controlSize(.large).buttonStyle(.borderedProminent).colorScheme(.dark)
-//            }
+          Group {
+            Text("Primary Buttons").font(.title).foregroundColor(.secondary)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderedProminent)
+              Button("Small", action: {}).controlSize(.small).buttonStyle(.borderedProminent)
+              Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderedProminent)
+              Button("Large", action: {}).controlSize(.large).buttonStyle(.borderedProminent)
+              //            ZStack {
+              //              Rectangle().fill(.white).frame(width: 100, height: 100)
+              //              Button("", action: {}).controlSize(.large).buttonStyle(.borderedProminent).colorScheme(.light)
+              //            }
+              //            ZStack {
+              //              Rectangle().fill(.black).frame(width: 100, height: 100)
+              //              Button("", action: {}).controlSize(.large).buttonStyle(.borderedProminent).colorScheme(.dark)
+              //            }
+            }
+            Text("Disabled Primary Buttons").font(.title)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderedProminent).disabled(true)
+              Button("Small", action: {}).controlSize(.small).buttonStyle(.borderedProminent).disabled(true)
+              Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderedProminent).disabled(true)
+              Button("Large", action: {}).controlSize(.large).buttonStyle(.borderedProminent).disabled(true)
+            }
           }
-          Text("Secondary Buttons").font(.title)
-          HStack {
-            Button("Mini", action: {}).controlSize(.mini)
-            Button("Small", action: {}).controlSize(.small)
-            Button("Regular", action: {}).controlSize(.regular)
-            Button("Large", action: {}).controlSize(.large)
+          Group {
+            Text("Secondary Buttons").font(.title)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini)
+              Button("Small", action: {}).controlSize(.small)
+              Button("Regular", action: {}).controlSize(.regular)
+              Button("Large", action: {}).controlSize(.large)
+            }
+            Text("Disabled Secondary Buttons").font(.title)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini).disabled(true)
+              Button("Small", action: {}).controlSize(.small).disabled(true)
+              Button("Regular", action: {}).controlSize(.regular).disabled(true)
+              Button("Large", action: {}).controlSize(.large).disabled(true)
+            }
           }
-          Text("Borderless Buttons").font(.title)
-          HStack {
-            Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderless)
-            Button("Small", action: {}).controlSize(.small).buttonStyle(.borderless)
-            Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderless)
-            Button("Large", action: {}).controlSize(.large).buttonStyle(.borderless)
+          Group {
+            Text("Borderless Buttons").font(.title)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderless)
+              Button("Small", action: {}).controlSize(.small).buttonStyle(.borderless)
+              Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderless)
+              Button("Large", action: {}).controlSize(.large).buttonStyle(.borderless)
+            }
+            Text("Disabled Borderless Buttons").font(.title)
+            HStack {
+              Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderless).disabled(true)
+              Button("Small", action: {}).controlSize(.small).buttonStyle(.borderless).disabled(true)
+              Button("Regular", action: {}).controlSize(.regular).buttonStyle(.borderless).disabled(true)
+              Button("Large", action: {}).controlSize(.large).buttonStyle(.borderless).disabled(true)
+            }
           }
+          
         }
         Group {
           Text("Icon Buttons").font(.title)
@@ -120,21 +149,33 @@ struct ButtonsView: View {
             Toggle("", isOn: $toggle).toggleStyle(SwitchToggleStyle()).padding(.bottom, 16).controlSize(.regular)
           }
         }
-//        Group {
-//          HStack {
-//            ZStack {
-//              Rectangle().fill(Color(.underPageBackgroundColor)).frame(width: 100, height: 100).colorScheme(.dark)
-//              Toggle("", isOn: $toggle).toggleStyle(SwitchToggleStyle()).padding(.bottom, 16).colorScheme(.dark)
-//            }
-//            ZStack {
-//              Rectangle().fill(Color(.underPageBackgroundColor)).frame(width: 100, height: 100).colorScheme(.light)
-//              Toggle("", isOn: $toggle).toggleStyle(SwitchToggleStyle()).padding(.bottom, 16).colorScheme(.light)
-//            }
-//          }
-//        }
+        //        Group {
+        //          HStack {
+        //            ZStack {
+        //              Rectangle().fill(Color(.underPageBackgroundColor)).frame(width: 100, height: 100).colorScheme(.dark)
+        //              Toggle("", isOn: $toggle).toggleStyle(SwitchToggleStyle()).padding(.bottom, 16).colorScheme(.dark)
+        //            }
+        //            ZStack {
+        //              Rectangle().fill(Color(.underPageBackgroundColor)).frame(width: 100, height: 100).colorScheme(.light)
+        //              Toggle("", isOn: $toggle).toggleStyle(SwitchToggleStyle()).padding(.bottom, 16).colorScheme(.light)
+        //            }
+        //          }
+        //        }
         Group {
           Text("Checkbox").font(.title)
-          Toggle("", isOn: $toggle).toggleStyle(.checkbox)
+          HStack {
+            Toggle("", isOn: $toggle).toggleStyle(.checkbox).controlSize(.mini)
+            Toggle("", isOn: $toggle).toggleStyle(.checkbox).controlSize(.small)
+            Toggle("", isOn: $toggle).toggleStyle(.checkbox).controlSize(.regular)
+            Toggle("", isOn: $toggle).toggleStyle(.checkbox).controlSize(.large)
+          }
+        }
+        Group {
+          Text("Radio").font(.title)
+          Picker(selection: $radioSelection, label: Text("System Theme")) {
+            Text("Light").tag(0)
+            Text("Dark").tag(1)
+          }.pickerStyle(.radioGroup)
         }
         Group {
           Text("Segmented Control").font(.title)

@@ -78,7 +78,7 @@ struct ContentView: View {
         case .dialogsAndSheets:
           Text(selectedSidebarItem.rawValue)
         case .selectors:
-          Text(selectedSidebarItem.rawValue)
+          SelectorsView()
         }
       }
 //      }.searchable(text: $searchText, placement: .sidebar, prompt: "Find a page").navigationTitle(viewModel.selectedPage?.name ?? "Buttons").searchSuggestions {
@@ -98,3 +98,14 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
+
+
+//struct ToolBarView: View {
+//  var body: some View {}
+//}
+//
+//struct ToolBarView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    ToolBarView()
+//  }
+//}

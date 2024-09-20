@@ -16,6 +16,40 @@ enum SidebarItem: String, Identifiable, CaseIterable {
   case colors
   case dialogsAndSheets
   case selectors
+  
+  var icon: String {
+    switch self {
+    case .buttons:
+      return "rectangle.on.rectangle"
+    case .indicators:
+      return "slider.horizontal.3"
+    case .fields:
+      return "keyboard"
+    case .colors:
+      return "swatchpalette"
+    case .dialogsAndSheets:
+      return "rectangle"
+    case .selectors:
+      return "filemenu.and.selection"
+    }
+  }
+  
+  var name: String {
+    switch self {
+    case .buttons:
+      return "Buttons"
+    case .indicators:
+      return "Indicators"
+    case .fields:
+      return "Fields"
+    case .colors:
+      return "Colors"
+    case .dialogsAndSheets:
+      return "Dialogs & Sheets"
+    case .selectors:
+      return "Selectors"
+    }
+  }
 }
 
 struct ContentView: View {
@@ -30,40 +64,14 @@ struct ContentView: View {
   var body: some View {
     if #available(macOS 13.0, *) {
       NavigationSplitView {
-        //        ZStack(alignment: .leading, content: {
-        //          Image(systemName: "magnifyingglass").padding(.leading, 16)
-        //          TextField("Search", text: $inputText).textFieldStyle(.roundedBorder).padding(EdgeInsets(top: 8, leading: 8, bottom: 4, trailing: 8))
-        //        })
-//        List {
-//          ForEach(viewModel.pages) { page in
-//            NavigationLink(page.name, tag: page.id, selection: $viewModel.selectedId) {
-//              Text(page.name)
-//                .navigationTitle(page.name)
-//            }
-//          }
-//        }
-//        .listStyle(.sidebar)
         List(SidebarItem.allCases, selection: $selectedSidebarItem) { item in
-//          HStack {
-//            switch item.rawValue {
-//            case "buttons":
-//              Image(systemName: "button.programmable")
-//            case "indicators":
-//              Image(systemName: "lines.measurement.horizontal")
-//            case "fields":
-//              Image(systemName: "character.cursor.ibeam")
-//            case "colors":
-//              Image(systemName: "square.stack")
-//            case "dialogsandsheets":
-//              Image(systemName: "square.on.square")
-//            case "selectors":
-//              Image(systemName: "filemenu.and.selection")
-//            default:
-//              Image(systemName: "filemenu.and.selection")
-//            }
-//            NavigationLink(item.rawValue.localizedCapitalized, value: item)
-//          }
-          NavigationLink(item.rawValue.localizedCapitalized, value: item)
+          NavigationLink(value: item) {
+            Label {
+              Text(item.name)
+            } icon: {
+              Image(systemName: item.icon)
+            }
+          }
         }
       } detail: {
         switch selectedSidebarItem {
@@ -81,12 +89,6 @@ struct ContentView: View {
           SelectorsView()
         }
       }
-//      }.searchable(text: $searchText, placement: .sidebar, prompt: "Find a page").navigationTitle(viewModel.selectedPage?.name ?? "Buttons").searchSuggestions {
-//        ForEach(viewModel.pages) { page in
-//          Label(page.name, systemImage: "rectangle").labelStyle(.titleOnly).searchCompletion(page.name)
-//        }
-//      }
-      //    }.searchable(text: $searchText, prompt: "Find a page").navigationTitle(viewModel.selectedPage?.name ?? "Buttons")
     } else {
       ContentViewLegacy()
     }
@@ -98,14 +100,3 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
-
-
-//struct ToolBarView: View {
-//  var body: some View {}
-//}
-//
-//struct ToolBarView_Previews: PreviewProvider {
-//  static var previews: some View {
-//    ToolBarView()
-//  }
-//}

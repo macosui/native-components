@@ -11,6 +11,8 @@ struct ButtonsView: View {
   @State private var toggle = false
   @State private var favoriteColor = 0
   @AppStorage("radioSelection") private var radioSelection = 0
+  @State var text = "Pulldown options"
+  @State private var selectedItem: Int = 0
   
   var body: some View {
     ScrollView(.vertical) {
@@ -185,6 +187,26 @@ struct ButtonsView: View {
             Text("Third").tag(2)
           }
           .pickerStyle(.segmented).padding(.bottom, 16)
+        }
+        Group {
+          Text("Pulldown Button (Menu)").font(.title)
+          Menu {
+            Button(action: { text = "Option 1" }) {
+              Label("Option 1", systemImage: "pencil")
+            }
+            Button(action: { text = "Option 2" }) {
+              Label("Option 2", systemImage: "pencil")
+            }
+         } label: {
+           Text(text)
+         }
+        }
+        Group {
+          Text("Popup Button (Picker)").font(.title)
+          Picker("Options", selection: $selectedItem) {
+            Text("Option 1").tag(0)
+            Text("Option 2").tag(1)
+          }
         }
       }.padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)).frame(maxWidth: .infinity, alignment: .leading)
     }

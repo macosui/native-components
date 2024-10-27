@@ -16,13 +16,14 @@ enum SidebarItem: String, Identifiable, CaseIterable {
   case colors
   case dialogsAndSheets
   case selectors
+  case windows
   
   var icon: String {
     switch self {
     case .buttons:
-      return "rectangle.on.rectangle"
+      return "button.programmable"
     case .indicators:
-      return "slider.horizontal.3"
+      return "progress.indicator"
     case .fields:
       return "keyboard"
     case .colors:
@@ -31,13 +32,15 @@ enum SidebarItem: String, Identifiable, CaseIterable {
       return "rectangle"
     case .selectors:
       return "filemenu.and.selection"
+    case .windows:
+      return "macwindow"
     }
   }
   
   var name: String {
     switch self {
     case .buttons:
-      return "Buttons"
+      return "Buttons & Controls"
     case .indicators:
       return "Indicators"
     case .fields:
@@ -48,6 +51,8 @@ enum SidebarItem: String, Identifiable, CaseIterable {
       return "Dialogs & Sheets"
     case .selectors:
       return "Selectors"
+    case .windows:
+      return "Windows"
     }
   }
 }
@@ -64,12 +69,16 @@ struct ContentView: View {
   var body: some View {
     if #available(macOS 13.0, *) {
       NavigationSplitView {
-        List(SidebarItem.allCases, selection: $selectedSidebarItem) { item in
-          NavigationLink(value: item) {
-            Label {
-              Text(item.name)
-            } icon: {
-              Image(systemName: item.icon)
+        List(selection: $selectedSidebarItem) {
+          Section {
+            ForEach(SidebarItem.allCases) { item in
+                NavigationLink(value: item) {
+                Label {
+                  Text(item.name)
+                } icon: {
+                  Image(systemName: item.icon).foregroundStyle(.white)
+                }
+              }
             }
           }
         }
@@ -78,17 +87,21 @@ struct ContentView: View {
         case .buttons:
           ButtonsView()
         case .indicators:
-          Text(selectedSidebarItem.rawValue)
+          IndicatorsView()
         case .fields:
-          Text(selectedSidebarItem.rawValue)
+          FieldsView()
         case .colors:
           ColorsView()
         case .dialogsAndSheets:
-          Text(selectedSidebarItem.rawValue)
+          DialogsAndSheetsView()
         case .selectors:
           SelectorsView()
+        case .windows:
+          VStack {
+            WindowView()
+          }
         }
-      }
+      }.searchable(text: $inputText, placement: .sidebar, prompt: "Find a page")
     } else {
       ContentViewLegacy()
     }
@@ -98,5 +111,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
+  }
+}
+
+@available(macOS 13.0, *)
+struct WindowView: View {
+  @Environment(\.openWindow) var openWindow
+  
+  var body: some View {
+    Button("Open New Window") {
+      openWindow(id: "whats-new")
+    }
   }
 }

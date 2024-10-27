@@ -462,7 +462,7 @@ struct ColorsView: View {
       } else {
         // Fallback on earlier versions
       }
-    }
+    }.padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)).frame(maxWidth: .infinity, alignment: .leading)
   }
 }
 

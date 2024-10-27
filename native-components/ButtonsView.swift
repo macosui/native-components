@@ -13,13 +13,16 @@ struct ButtonsView: View {
   @AppStorage("radioSelection") private var radioSelection = 0
   @State var text = "Pulldown options"
   @State private var selectedItem: Int = 0
+  @State private var sliderValue: Double = 0
+  @State private var sliderStepValue: Double = 0
+  @State private var stepperValue: Int = 0
   
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: HorizontalAlignment.leading) {
         Group {
           Group {
-            Text("Primary Buttons").font(.title).foregroundColor(.secondary)
+            Text("Primary Buttons").font(.title)
             HStack {
               Button("Mini", action: {}).controlSize(.mini).buttonStyle(.borderedProminent)
               Button("Small", action: {}).controlSize(.small).buttonStyle(.borderedProminent)
@@ -206,6 +209,23 @@ struct ButtonsView: View {
           Picker("Options", selection: $selectedItem) {
             Text("Option 1").tag(0)
             Text("Option 2").tag(1)
+          }
+        }
+        Group {
+          Text("Slider").font(.title)
+          HStack {
+            Text("Regular")
+            Slider(value: $sliderValue)
+          }
+          HStack {
+            Text("With steps")
+            Slider(value: $sliderStepValue, in: 0...100, step: 10)
+          }
+        }
+        Group {
+          Text("Stepper").font(.title)
+          Stepper(value: $stepperValue, in: 1...100, step: 1) {
+            Text("Counter: \(stepperValue)")
           }
         }
       }.padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)).frame(maxWidth: .infinity, alignment: .leading)

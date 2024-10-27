@@ -20,6 +20,9 @@
 		578C670329A9668F00F5C499 /* native_componentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670229A9668F00F5C499 /* native_componentsTests.swift */; };
 		578C670D29A9668F00F5C499 /* native_componentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670C29A9668F00F5C499 /* native_componentsUITests.swift */; };
 		578C670F29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C670E29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift */; };
+		5795A6C82CB1C192007396D5 /* DialogsAndSheetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5795A6C72CB1C192007396D5 /* DialogsAndSheetsView.swift */; };
+		57CB69CE2C9DBCC1006B2109 /* IndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CB69CD2C9DBCBB006B2109 /* IndicatorsView.swift */; };
+		57CB69D12C9DBF89006B2109 /* FieldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CB69D02C9DBF89006B2109 /* FieldsView.swift */; };
 		57EDDEED2A5485990027B9A6 /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +61,9 @@
 		578C670829A9668F00F5C499 /* native-componentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "native-componentsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		578C670C29A9668F00F5C499 /* native_componentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_componentsUITests.swift; sourceTree = "<group>"; };
 		578C670E29A9668F00F5C499 /* native_componentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = native_componentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5795A6C72CB1C192007396D5 /* DialogsAndSheetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsAndSheetsView.swift; sourceTree = "<group>"; };
+		57CB69CD2C9DBCBB006B2109 /* IndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorsView.swift; sourceTree = "<group>"; };
+		57CB69D02C9DBF89006B2109 /* FieldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsView.swift; sourceTree = "<group>"; };
 		57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,7 @@
 		578C66EF29A9668E00F5C499 /* native-components */ = {
 			isa = PBXGroup;
 			children = (
+				57CB69CD2C9DBCBB006B2109 /* IndicatorsView.swift */,
 				578C66F029A9668E00F5C499 /* native_componentsApp.swift */,
 				578C66F229A9668E00F5C499 /* ContentView.swift */,
 				578C66F429A9668F00F5C499 /* Assets.xcassets */,
@@ -121,6 +128,8 @@
 				577B973129B7D3D700F1D292 /* HelpButton.swift */,
 				577B976E29C4F81A00F1D292 /* ColorsView.swift */,
 				57EDDEEC2A5485990027B9A6 /* SelectorsView.swift */,
+				57CB69D02C9DBF89006B2109 /* FieldsView.swift */,
+				5795A6C72CB1C192007396D5 /* DialogsAndSheetsView.swift */,
 			);
 			path = "native-components";
 			sourceTree = "<group>";
@@ -280,13 +289,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CB69CE2C9DBCC1006B2109 /* IndicatorsView.swift in Sources */,
 				577B976F29C4F81A00F1D292 /* ColorsView.swift in Sources */,
 				577B973029B7C80D00F1D292 /* ButtonsView.swift in Sources */,
 				577B973229B7D3D700F1D292 /* HelpButton.swift in Sources */,
 				57EDDEED2A5485990027B9A6 /* SelectorsView.swift in Sources */,
 				577B972A29B7C66300F1D292 /* ContentViewLegacy.swift in Sources */,
+				5795A6C82CB1C192007396D5 /* DialogsAndSheetsView.swift in Sources */,
 				577B972E29B7C6C900F1D292 /* PageModel.swift in Sources */,
 				578C66F329A9668E00F5C499 /* ContentView.swift in Sources */,
+				57CB69D12C9DBF89006B2109 /* FieldsView.swift in Sources */,
 				577B972C29B7C68F00F1D292 /* Page.swift in Sources */,
 				578C66F129A9668E00F5C499 /* native_componentsApp.swift in Sources */,
 			);

@@ -13,5 +13,8 @@ struct native_componentsApp: App {
     WindowGroup {
       ContentView()
     }
+    WindowGroup(id: "whats-new") {
+      Text("Hello!")
+    }
   }
 }
